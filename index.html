@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Responsive Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        .container {
+            display: flex;
+            margin-top: 60px;
+            padding: 10px;
+        }
+        .left-menu {
+            background-color: #f4f4f4;
+            width: 250px;
+            transition: width 0.3s;
+        }
+        .left-menu.collapsed {
+            width: 60px;
+        }
+        .left-menu ul {
+            list-style: none;
+            padding: 10px;
+        }
+        .left-menu ul li {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .left-menu ul li:hover {
+            background-color: #ddd;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            min-height: 80vh;
+        }
+        .right-panel {
+            background-color: #f4f4f4;
+            width: 250px;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .toggle-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 10px;
+        } 
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .right-panel {
+                display: none;
+            }
+            .left-menu {
+                width: 100%;
+            }
+            .left-menu.collapsed {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>A Fixed Navbar</h1>
+    </div>
+
+    <div class="container">
+        <div class="left-menu" id="leftMenu">
+            <button class="toggle-button" onclick="toggleMenu()">☰Collapsible left Menu</button>
+            <ul>
+                <li>Menu Item 1</li>
+                <li>Menu Item 2</li>
+                <li>Menu Item 3</li>
+                <li>Menu Item 4</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h2>Main Content Area</h2>
+            <p>
+                What is Lorem Ipsum?
+                
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                Why do we use it?
+                
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                
+                Where does it come from?
+                
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                Where can I get some?
+                
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    
+                    paragraphs
+                    words
+                    bytes
+                    lists
+                        Start with 'Lorem
+                ipsum dolor sit amet...'
+                    </p>
+        </div>
+
+        <div class="right-panel">
+            <h3>Right Side Panel</h3>
+            <p>This is the right-side panel content.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Footer Content</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('leftMenu');
+            menu.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
